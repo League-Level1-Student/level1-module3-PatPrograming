@@ -5,6 +5,7 @@ package _03_jukebox;
  */
 
 
+import java.awt.Dimension;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -12,7 +13,10 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -26,9 +30,9 @@ public class Jukebox implements Runnable {
 
 		// 1. Find an mp3 on your computer or on the Internet.
 		// 2. Create a Song object for that mp3
-
+Song song=new Song("NGGYU.mp3");
 		// 3. Play the Song
-
+// song.play();
 		/*
 		 * 4. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -36,9 +40,22 @@ public class Jukebox implements Runnable {
 		 * cover is clicked, stop the currently playing song, and play the one
 		 * that was selected.
 		 */
-    }
-    
-    
+JFrame frame=new JFrame();
+JPanel panel=new JPanel();
+JButton button=new JButton();
+JButton button1=new JButton();
+frame.setPreferredSize(new Dimension(500,500));
+frame.add(panel);
+frame.setVisible(true);
+frame.pack();
+panel.add(button);
+panel.add(button1);
+JLabel label=new JLabel();
+label=loadImage("NGGYUAlbumcover.jpg");
+label.setPreferredSize(new Dimension(200,200));
+panel.add(label);
+}
+   
 	/* Use this method to add album covers to your Panel. */
 	private JLabel loadImage(String fileName) {
 		URL imageURL = getClass().getResource(fileName);

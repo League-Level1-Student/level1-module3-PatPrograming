@@ -52,7 +52,7 @@ panel.add(button);
 panel.add(button1);
 JLabel label=new JLabel();
 label=loadImage("NGGYUAlbumcover.jpg");
-label.setPreferredSize(new Dimension(200,200));
+label.setPreferredSize(new Dimension(300,300));
 panel.add(label);
 }
    
